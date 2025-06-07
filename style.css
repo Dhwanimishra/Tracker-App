@@ -1,0 +1,134 @@
+:root {
+    --bg: #fff;
+  --text: #000;
+  --input-bg: #f0f0f0;
+  --task-bg: #f0f0f0;
+  --completed-bg: #d4edda;
+  --accent: #4CAF50;
+}
+
+body.dark {
+  --bg: #1f1f1f;
+  --text: #fff;
+  --input-bg: #333;
+  --task-bg: #2e2e2e;
+  --completed-bg: #356e48;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.tracker-container {
+  width: 100%;
+  max-width: 500px;
+  background: var(--bg);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-section input[type="text"],
+.input-section input[type="date"] {
+  flex: 1;
+  padding: 10px;
+  background: var(--input-bg);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: var(--text);
+}
+
+.input-section button {
+  padding: 10px 20px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task {
+  background: var(--task-bg);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.task.completed {
+  text-decoration: line-through;
+  background: var(--completed-bg);
+  color: #999;
+}
+
+.task-date {
+  font-size: 12px;
+  color: gray;
+}
+
+.task button {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.progress-container {
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--accent);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+#toggle-mode {
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  background: #444;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .input-section {
+    flex-direction: column;
+  }
+}
